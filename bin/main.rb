@@ -1,4 +1,9 @@
 #!/usr/bin/env ruby
+puts 'Name of First Player : '
+player_one = gets.chomp
+
+puts 'Name of Seconde Player : '
+player_two = gets.chomp
 
 class StartGame
   def initialize(player_one, player_two)
@@ -42,11 +47,6 @@ class StartGame
   end
 end
 
-puts 'Name of First Player : '
-player_one = gets.chomp
-
-puts 'Name of Seconde Player : '
-player_two = gets.chomp
 flag = false
 game_board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 arr = []
