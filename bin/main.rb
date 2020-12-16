@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-puts 'Welcome to Tic Tac Toe Game'
 
 class StartGame
   def initialize(player_one, player_two)
