@@ -32,11 +32,11 @@ class StartGame
   end
 
   def check(number, player, game_board, arr)
-    if (1..9).include?(number) 
-      if arr.include?(number) == true 
-          puts 'This number has been taken before! , please try another number'
-          number = gets.chomp.to_i
-          check(number, player, game_board, arr)
+    if (1..9).include?(number)
+      if arr.include?(number) == true
+        puts 'This number has been taken before! , please try another number'
+        number = gets.chomp.to_i
+        check(number, player, game_board, arr)
       else
         arr.push(number)
         game_board[number - 1] = if player == 1
@@ -47,11 +47,11 @@ class StartGame
         print_board(game_board)
       end
     else
-          puts 'Invalid number'
-          puts 'Please select number between 1 and 9'
-          number = gets.chomp.to_i
-          check(number, player, game_board, arr)
-      end
+      puts 'Invalid number'
+      puts 'Please select number between 1 and 9'
+      number = gets.chomp.to_i
+      check(number, player, game_board, arr)
+    end
   end
 end
 
@@ -84,12 +84,13 @@ while flag == false
   count += 1
 end
 
-def result(move , player='No one won')
-  if move == 'win'
+def result(move, player = 'No one won')
+  case move
+  when 'win'
     puts "Congratulation #{player} ! You win !!"
-  elsif move == 'draw'
-    puts "That is DRAW !"
+  when 'draw'
+    puts 'That is DRAW !'
   end
 end
 
-puts result('win' , player_one) , result('draw') 
+puts result('win', player_one), result('draw')
