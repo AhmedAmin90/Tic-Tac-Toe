@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 puts 'The First player name : '
 player_one = gets.chomp
 
@@ -94,3 +95,5 @@ def result(move, player = 'No one won')
 end
 
 puts result('win', player_one), result('draw')
+
+
