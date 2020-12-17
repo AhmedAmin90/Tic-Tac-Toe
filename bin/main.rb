@@ -95,5 +95,3 @@ def result(move, player = 'No one won')
 end
 
 puts result('win', player_one), result('draw')
-
-
