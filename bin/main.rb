@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
-puts 'Name of First Player : '
+puts 'The First player name : '
 player_one = gets.chomp
 
-puts 'Name of Seconde Player : '
+puts 'The Second Player Name : '
 player_two = gets.chomp
 
 class StartGame
@@ -32,18 +32,26 @@ class StartGame
   end
 
   def check(number, player, game_board, arr)
-    until (1..9).include?(number) && (arr.include?(number) == false)
-      puts 'Invalid number'
-      puts 'Please select number between 1 to 9'
-      number = gets.chomp.to_i
-    end
-    arr.push(number)
-    game_board[number - 1] = if player == 1
-                               'X'
-                             else
-                               'O'
-                             end
-    print_board(game_board)
+    if (1..9).include?(number) 
+      if arr.include?(number) == true 
+          puts 'This number has been taken before! , please try another number'
+          number = gets.chomp.to_i
+          check(number, player, game_board, arr)
+      else
+        arr.push(number)
+        game_board[number - 1] = if player == 1
+                                   'X'
+                                 else
+                                   'O'
+                                 end
+        print_board(game_board)
+      end
+    else
+          puts 'Invalid number'
+          puts 'Please select number between 1 and 9'
+          number = gets.chomp.to_i
+          check(number, player, game_board, arr)
+      end
   end
 end
 
@@ -75,3 +83,13 @@ while flag == false
   # Loop the process until the game is end.
   count += 1
 end
+
+def result(move , player='No one won')
+  if move == 'win'
+    puts "Congratulation #{player} ! You win !!"
+  elsif move == 'draw'
+    puts "That is DRAW !"
+  end
+end
+
+puts result('win' , player_one) , result('draw') 
