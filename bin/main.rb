@@ -66,14 +66,14 @@ new_game.print_board(game_board)
 count = 0
 while flag == false
 
-  puts "#{player_one} turn: Select number between 1 To 9"
+  puts "#{player_one} turn: Select number between 1 and 9"
   player_one_turn = gets.chomp.to_i
   new_game.check(player_one_turn, 1, game_board, arr)
   # method: check the number if it is valid number and not repeated.
   # Change the board if check pass : Now, the move is displayed on the board.
   # Or: Write warning message if invalid number or repeated number.
 
-  puts "#{player_two} turn: Select number between 1 To 9"
+  puts "#{player_two} turn: Select number between 1 and 9"
   player_two_turn = gets.chomp.to_i
   new_game.check(player_two_turn, 2, game_board, arr)
   # method: check the number if it is valid number and not repeated.
