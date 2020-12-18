@@ -1,11 +1,14 @@
 #!/usr/bin/env ruby
+
 require_relative '../lib/game_logic'
+
 
 puts 'The First player name : '
 player_one = gets.chomp
 
 puts 'The Second player name : '
 player_two = gets.chomp
+
 
 flag = false
 game_board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -68,3 +71,14 @@ while flag == false
   break if win_draw_case.flag == true
 
 end
+
+def result(move, player = 'No one won')
+  case move
+  when 'win'
+    puts "Congratulation #{player} ! You win !!"
+  when 'draw'
+    puts 'That is DRAW !'
+  end
+end
+
+puts result('win', player_one), result('draw')
