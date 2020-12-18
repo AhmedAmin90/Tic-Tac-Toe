@@ -2,13 +2,11 @@
 
 require_relative '../lib/game_logic'
 
-
 puts 'The First player name : '
 player_one = gets.chomp
 
 puts 'The Second player name : '
 player_two = gets.chomp
-
 
 flag = false
 game_board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
