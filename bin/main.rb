@@ -69,14 +69,3 @@ while flag == false
   break if win_draw_case.flag == true
 
 end
-
-def result(move, player = 'No one won')
-  case move
-  when 'win'
-    puts "Congratulation #{player} ! You win !!"
-  when 'draw'
-    puts 'That is DRAW !'
-  end
-end
-
-puts result('win', player_one), result('draw')
