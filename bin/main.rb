@@ -37,19 +37,17 @@ def check(number, player, game_board, arr)
   end
 end
 
-def win_draw (player,flag,draw)
+def win_draw(player, flag, draw)
   if flag == true
     if draw == false
-       puts "Congratulation #{player} ! You Win " 
+      puts "Congratulation #{player} ! You Win "
     else
-       puts 'DRAW !'
+      puts 'DRAW !'
     end
   else
-  puts "Continue in the game !"
-   end
+    puts 'Continue in the game !'
+  end
 end
-
-
 
 while flag == false
 
@@ -58,16 +56,15 @@ while flag == false
   check(player_one_turn, 1, game_board, arr)
   puts new_game.print_board(game_board)
   win_draw_case.game_status(game_board, flag)
-  win_draw(player_one,win_draw_case.flag ,win_draw_case.draw )
+  win_draw(player_one, win_draw_case.flag, win_draw_case.draw)
   break if win_draw_case.flag == true
 
   puts "#{player_two} turn: Select number between 1 and 9"
   player_two_turn = gets.chomp.to_i
   check(player_two_turn, 2, game_board, arr)
   puts new_game.print_board(game_board)
-  win_draw_case.game_status(game_board, flag )
-  win_draw(player_two,win_draw_case.flag ,win_draw_case.draw)
+  win_draw_case.game_status(game_board, flag)
+  win_draw(player_two, win_draw_case.flag, win_draw_case.draw)
   break if win_draw_case.flag == true
-
 
 end
