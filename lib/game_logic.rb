@@ -1,4 +1,5 @@
-# rubocop:disable Layout/LineLength
+# rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Layout/LineLength
+
 class StartGame
   attr_accessor :flag
 
@@ -70,9 +71,9 @@ class StartGame
       @flag = true
 
     else
-      puts 'continue'
+      puts 'Continue in the game'
 
     end
   end
 end
-# rubocop:enable Layout/LineLength
+# rubocop:enable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Layout/LineLength
