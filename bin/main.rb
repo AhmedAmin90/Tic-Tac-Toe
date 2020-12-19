@@ -12,8 +12,8 @@ flag = false
 game_board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 arr = []
 new_game = StartGame.new(player_one, player_two)
-new_game.greeting
-new_game.print_board(game_board)
+puts new_game.greeting
+puts new_game.print_board(game_board)
 win_draw_case = WinOrDraw.new
 
 def check(number, player, game_board, arr)

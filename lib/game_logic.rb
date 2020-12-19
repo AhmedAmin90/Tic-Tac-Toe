@@ -1,6 +1,7 @@
 # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Layout/LineLength
 
 class StartGame
+  attr_accessor  :player_one , :player_two
   def initialize(player_one, player_two)
     @player_one = player_one
     @player_two = player_two
@@ -9,7 +10,7 @@ class StartGame
   end
 
   def greeting
-    puts "
+    return "
           |Welcome to Tic Tac Toe game,
           |The first player is: #{@player_one} with #{@sign_x}
           |**** V.S ****
@@ -18,7 +19,7 @@ class StartGame
   end
 
   def print_board(board)
-    puts "
+    return "
         #{board[0]} | #{board[1]} | #{board[2]}
         ----------
         #{board[3]} | #{board[4]} | #{board[5]}
@@ -28,7 +29,7 @@ class StartGame
 end
 
 class WinOrDraw
-  attr_accessor :flag, :draw
+  attr_reader :flag, :draw
 
   def initialize
     @flag = false
