@@ -1,20 +1,19 @@
 # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Layout/LineLength
 
 class StartGame
-  attr_accessor  :player_one , :player_two
+  attr_reader  :player_one , :player_two
+
   def initialize(player_one, player_two)
     @player_one = player_one
     @player_two = player_two
-    @sign_x = 'X'
-    @sign_o = 'O'
   end
 
   def greeting
     return "
           |Welcome to Tic Tac Toe game,
-          |The first player is: #{@player_one} with #{@sign_x}
+          |The first player is: #{@player_one} with X
           |**** V.S ****
-          |the second player is: #{@player_two} with #{@sign_o}
+          |the second player is: #{@player_two} with Y
           "
   end
 
