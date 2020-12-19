@@ -1,7 +1,7 @@
 # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Layout/LineLength
 
 class StartGame
-  attr_reader  :player_one , :player_two
+  attr_reader :player_one, :player_two
 
   def initialize(player_one, player_two)
     @player_one = player_one
@@ -9,7 +9,7 @@ class StartGame
   end
 
   def greeting
-    return "
+    "
           |Welcome to Tic Tac Toe game,
           |The first player is: #{@player_one} with X
           |**** V.S ****
@@ -18,7 +18,7 @@ class StartGame
   end
 
   def print_board(board)
-    return "
+    "
         #{board[0]} | #{board[1]} | #{board[2]}
         ----------
         #{board[3]} | #{board[4]} | #{board[5]}
