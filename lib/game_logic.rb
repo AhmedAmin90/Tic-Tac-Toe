@@ -11,9 +11,9 @@ class StartGame
   def greeting
     Rainbow("
           |Welcome to Tic Tac Toe game, ").yellow + Rainbow("
-          |The first player is: #{@player_one} with ").yellow + Rainbow("X").blue + Rainbow("
+          |The first player is: #{@player_one} with ").yellow + Rainbow('X').blue + Rainbow("
           |**** V.S ****").yellow + Rainbow("
-          |the second player is: #{@player_two} with ").yellow + Rainbow("O").red  
+          |the second player is: #{@player_two} with ").yellow + Rainbow('O').red
   end
 
   def print_board(board)

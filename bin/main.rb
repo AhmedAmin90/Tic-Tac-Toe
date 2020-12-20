@@ -5,18 +5,18 @@ require 'rainbow'
 
 def welcome
   puts Rainbow('Welcome to Tic Tac Toe Game !').italic.bold.orange
-  puts Rainbow('These are the game instructions: 
-    1- The board contains 9 boxes each box has its nubmer from 1 to 9. 
+  puts Rainbow('These are the game instructions:
+    1- The board contains 9 boxes each box has its nubmer from 1 to 9.
     2- The player one will have X sign.
     3- The player two will have O sign.
-    4- Each player has to select a number on the board between 1 and 9. 
+    4- Each player has to select a number on the board between 1 and 9.
     The number automatically will change to the sign of the player (X or O).
-    5- If the player select a number outside the range or a position is already taken, 
-    the game will show that the player need to select another number. 
+    5- If the player select a number outside the range or a position is already taken,
+    the game will show that the player need to select another number.
     6- The player who succeeds in placing three of their marks in a diagonal, horizontal, or vertical row is the winner.
     7- When all 9 squares are full, the game is over. If no player has success condition, the game ends in a draw.
     ').bold.white
-    puts Rainbow('************ Enjoy The Game ************ ').italic.yellow
+  puts Rainbow('************ Enjoy The Game ************ ').italic.yellow
 end
 
 puts welcome
