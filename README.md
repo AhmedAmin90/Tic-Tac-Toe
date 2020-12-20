@@ -48,7 +48,9 @@ git clone https://github.com/Wusinho/Tic-Tac-Toe
 # The game screenshot :
 ![screenshot](img/game-screen.png)
 
+# Live preview :
 
+[Live Demo Link](https://repl.it/@AhmedAmin3/Tic-Tac-Toe-Game)
 
 
 # Author:
