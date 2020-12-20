@@ -9,21 +9,20 @@ class StartGame
   end
 
   def greeting
-    "
-          |Welcome to Tic Tac Toe game,
-          |The first player is: #{@player_one} with X
-          |**** V.S ****
-          |the second player is: #{@player_two} with Y
-          "
+    Rainbow("
+          |Welcome to Tic Tac Toe game, ").yellow + Rainbow("
+          |The first player is: #{@player_one} with ").yellow + Rainbow('X').blue + Rainbow("
+          |**** V.S ****").yellow + Rainbow("
+          |the second player is: #{@player_two} with ").yellow + Rainbow('O').purple
   end
 
   def print_board(board)
-    "
+    Rainbow("
         #{board[0]} | #{board[1]} | #{board[2]}
         ----------
         #{board[3]} | #{board[4]} | #{board[5]}
         ----------
-        #{board[6]} | #{board[7]} | #{board[8]}"
+        #{board[6]} | #{board[7]} | #{board[8]}").aqua
   end
 end
 
@@ -50,7 +49,7 @@ class WinOrDraw
 
       @flag = true
 
-    elsif board.count('X') > 4
+    elsif board.count(Rainbow('X').blue) > 4
       @draw = true
       @flag = true
     end
