@@ -25,7 +25,7 @@ puts Rainbow('The First player name : ').green
 player_one = Rainbow(gets.chomp).bold.blue
 
 puts Rainbow('The Second player name : ').green
-player_two = Rainbow(gets.chomp).bold.red
+player_two = Rainbow(gets.chomp).bold.purple
 
 flag = false
 game_board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -46,7 +46,7 @@ def check(number, player, game_board, arr)
       game_board[number - 1] = if player == 1
                                  Rainbow('X').blue
                                else
-                                 Rainbow('O').red
+                                 Rainbow('O').purple
                                end
     end
   else
