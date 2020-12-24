@@ -31,45 +31,29 @@ puts new_game.greeting
 puts new_game.print_board(game_board)
 win_draw_case = WinOrDraw.new
 
-def check(number, player, game_board, arr)
-  if (1..9).include?(number)
-    if arr.include?(number) == true
-      puts Rainbow('This number has been taken before! , please try another number').bold.yellow
-      number = gets.chomp.to_i
-      check(number, player, game_board, arr)
-    else
-      arr.push(number)
-      game_board[number - 1] = if player == 1
-                                 Rainbow('X').blue
-                               else
-                                 Rainbow('O').purple
-                               end
-    end
-  else
-    puts Rainbow('Invalid number').bold.red
-    puts Rainbow('Please select number between 1 and 9').yellow
-    number = gets.chomp.to_i
-    check(number, player, game_board, arr)
-  end
-end
-
-def win_draw(player, flag, draw)
-  if flag == true
-    if draw == false
-      Rainbow("Congratulation ! #{player} ").bold.gold + Rainbow('You Win').bold.gold
-    else
-      Rainbow('DRAW !').bold.green
-    end
-  else
-    Rainbow('Continue in the game !').cyan
-  end
-end
 
 while flag == false
 
   puts "#{player_one} turn: Select number between 1 and 9"
   player_one_turn = gets.chomp.to_i
-  check(player_one_turn, 1, game_board, arr)
+  move = true
+  while move
+    if (1..9).include?(player_one_turn)
+        if arr.include?(player_one_turn) == true
+          puts Rainbow('This number has been taken before! , please try another number').bold.yellow
+          player_one_turn = gets.chomp.to_i
+        else
+            check( player_one_turn, 1, game_board, arr)
+            move = false
+            break
+        end
+    else
+      puts Rainbow('Invalid number').bold.red
+      puts Rainbow('Please select number between 1 and 9').yellow
+      player_one_turn = gets.chomp.to_i
+    end
+  end
+  # check(player_one_turn, 1, game_board, arr)
   puts new_game.print_board(game_board)
   win_draw_case.game_status(game_board, flag)
   puts win_draw(player_one, win_draw_case.flag, win_draw_case.draw)
@@ -77,7 +61,24 @@ while flag == false
 
   puts "#{player_two} turn: Select number between 1 and 9"
   player_two_turn = gets.chomp.to_i
-  check(player_two_turn, 2, game_board, arr)
+  move = true
+  while move
+    if (1..9).include?(player_two_turn)
+        if arr.include?(player_two_turn) == true
+          puts Rainbow('This number has been taken before! , please try another number').bold.yellow
+          player_two_turn = gets.chomp.to_i
+        else
+            check( player_two_turn, 2, game_board, arr)
+            move = false
+            break
+        end
+    else
+      puts Rainbow('Invalid number').bold.red
+      puts Rainbow('Please select number between 1 and 9').yellow
+      player_two_turn = gets.chomp.to_i
+    end
+  end
+  # check(player_two_turn, 2, game_board, arr)
   puts new_game.print_board(game_board)
   win_draw_case.game_status(game_board, flag)
   puts win_draw(player_two, win_draw_case.flag, win_draw_case.draw)

@@ -55,4 +55,25 @@ class WinOrDraw
     end
   end
 end
+
+def check(number, player, game_board, arr)
+      arr.push(number)
+      game_board[number - 1] = if player == 1
+                                 Rainbow('X').blue
+                               else
+                                 Rainbow('O').purple
+                               end
+end
+
+def win_draw(player, flag, draw)
+  if flag == true
+    if draw == false
+      Rainbow("Congratulation ! #{player} ").bold.gold + Rainbow('You Win').bold.gold
+    else
+      Rainbow('DRAW !').bold.green
+    end
+  else
+    Rainbow('Continue in the game !').cyan
+  end
+end
 # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Layout/LineLength
