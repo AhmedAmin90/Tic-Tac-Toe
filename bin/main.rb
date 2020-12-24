@@ -3,7 +3,6 @@
 require_relative '../lib/game_logic'
 require 'rainbow'
 
-def welcome
   puts Rainbow('Welcome to Tic Tac Toe Game !').italic.bold.orange
   puts Rainbow('These are the game instructions:
     1- The board contains 9 boxes each box has its nubmer from 1 to 9.
@@ -17,9 +16,7 @@ def welcome
     7- When all 9 squares are full, the game is over. If no player has success condition, the game ends in a draw.
     ').bold.white
   puts Rainbow('************ Enjoy The Game ************ ').italic.yellow
-end
 
-puts welcome
 
 puts Rainbow('The First player name : ').green
 player_one = Rainbow(gets.chomp).bold.blue
@@ -60,12 +57,12 @@ end
 def win_draw(player, flag, draw)
   if flag == true
     if draw == false
-      puts Rainbow("Congratulation ! #{player} ").bold.gold + Rainbow('You Win').bold.gold
-    else
-      puts Rainbow('DRAW !').bold.green
+      return Rainbow("Congratulation ! #{player} ").bold.gold + Rainbow('You Win').bold.gold
+      else
+      return Rainbow('DRAW !').bold.green
     end
   else
-    puts Rainbow('Continue in the game !').cyan
+    return Rainbow('Continue in the game !').cyan
   end
 end
 
@@ -76,7 +73,7 @@ while flag == false
   check(player_one_turn, 1, game_board, arr)
   puts new_game.print_board(game_board)
   win_draw_case.game_status(game_board, flag)
-  win_draw(player_one, win_draw_case.flag, win_draw_case.draw)
+  puts win_draw(player_one, win_draw_case.flag, win_draw_case.draw)
   break if win_draw_case.flag == true
 
   puts "#{player_two} turn: Select number between 1 and 9"
@@ -84,7 +81,7 @@ while flag == false
   check(player_two_turn, 2, game_board, arr)
   puts new_game.print_board(game_board)
   win_draw_case.game_status(game_board, flag)
-  win_draw(player_two, win_draw_case.flag, win_draw_case.draw)
+  puts win_draw(player_two, win_draw_case.flag, win_draw_case.draw)
   break if win_draw_case.flag == true
 
 end

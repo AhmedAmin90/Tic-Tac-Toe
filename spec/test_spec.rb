@@ -70,3 +70,41 @@ describe WinOrDraw do
         end 
     end 
 end
+
+describe "#check" do
+    let(:number_case_one) {1}
+    let(:number_case_two) {2}
+    let(:number_case_three) {10}
+    let(:player_one) { 1 }
+    let(:player_two) { 2 }
+    let(:arr) {[2]}
+    let(:game_board) {[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+
+    it "Returns box in the game board to X" do
+        expect(check(number_case_one , player_one , game_board , arr )).to  eql(game_board[number_case_one - 1] = "\e[34mX\e[0m")
+    end
+    
+    it "Returns box in the game board to O" do
+        expect(check(number_case_one , player_two , game_board , arr )).to  eql(game_board[number_case_one - 1] = "\e[38;5;129mO\e[0m")
+    end
+end
+
+describe "#win_draw" do
+   
+    let(:player) {'player_name'}
+    let(:flag) {false}
+    let(:draw) {false}
+    
+    it "Returns the player is win" do
+        expect(win_draw(player, true , false)).to eql("\e[1m\e[38;5;226mCongratulation ! #{player} \e[0m\e[1m\e[38;5;226mYou Win\e[0m")
+    end
+
+    it "Returns continue in game" do
+        expect(win_draw(player, false , false)).to eql("\e[36mContinue in the game !\e[0m")
+    end
+
+    it "Return Draw!" do
+        expect(win_draw(player, true , true)).to eql("\e[1m\e[32mDRAW !\e[0m")
+    end
+    
+end
