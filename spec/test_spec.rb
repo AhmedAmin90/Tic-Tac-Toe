@@ -1,6 +1,6 @@
 # rubocop:disable Layout/LineLength
 # spec/test_spec.rb
-require './lib/game_logic'
+require_relative '../lib/game_logic'
 require 'rainbow'
 
 # StartGame class
