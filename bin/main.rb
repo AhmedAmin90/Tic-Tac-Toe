@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+# rubocop:disable Metrics/BlockNesting
 require_relative '../lib/game_logic'
 require 'rainbow'
 
@@ -31,7 +31,6 @@ puts new_game.greeting
 puts new_game.print_board(game_board)
 win_draw_case = WinOrDraw.new
 
-
 while flag == false
 
   puts "#{player_one} turn: Select number between 1 and 9"
@@ -39,14 +38,14 @@ while flag == false
   move = true
   while move
     if (1..9).include?(player_one_turn)
-        if arr.include?(player_one_turn) == true
-          puts Rainbow('This number has been taken before! , please try another number').bold.yellow
-          player_one_turn = gets.chomp.to_i
-        else
-            check( player_one_turn, 1, game_board, arr)
-            move = false
-            break
-        end
+      if arr.include?(player_one_turn) == true
+        puts Rainbow('This number has been taken before! , please try another number').bold.yellow
+        player_one_turn = gets.chomp.to_i
+      else
+        check(player_one_turn, 1, game_board, arr)
+        move = false
+        break
+      end
     else
       puts Rainbow('Invalid number').bold.red
       puts Rainbow('Please select number between 1 and 9').yellow
@@ -64,14 +63,14 @@ while flag == false
   move = true
   while move
     if (1..9).include?(player_two_turn)
-        if arr.include?(player_two_turn) == true
-          puts Rainbow('This number has been taken before! , please try another number').bold.yellow
-          player_two_turn = gets.chomp.to_i
-        else
-            check( player_two_turn, 2, game_board, arr)
-            move = false
-            break
-        end
+      if arr.include?(player_two_turn) == true
+        puts Rainbow('This number has been taken before! , please try another number').bold.yellow
+        player_two_turn = gets.chomp.to_i
+      else
+        check(player_two_turn, 2, game_board, arr)
+        move = false
+        break
+      end
     else
       puts Rainbow('Invalid number').bold.red
       puts Rainbow('Please select number between 1 and 9').yellow
@@ -85,3 +84,5 @@ while flag == false
   break if win_draw_case.flag == true
 
 end
+
+# rubocop:enable Metrics/BlockNesting
