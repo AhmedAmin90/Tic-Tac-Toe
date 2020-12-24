@@ -3,8 +3,8 @@
 require_relative '../lib/game_logic'
 require 'rainbow'
 
-  puts Rainbow('Welcome to Tic Tac Toe Game !').italic.bold.orange
-  puts Rainbow('These are the game instructions:
+puts Rainbow('Welcome to Tic Tac Toe Game !').italic.bold.orange
+puts Rainbow('These are the game instructions:
     1- The board contains 9 boxes each box has its nubmer from 1 to 9.
     2- The player one will have X sign.
     3- The player two will have O sign.
@@ -15,8 +15,7 @@ require 'rainbow'
     6- The player who succeeds in placing three of their marks in a diagonal, horizontal, or vertical row is the winner.
     7- When all 9 squares are full, the game is over. If no player has success condition, the game ends in a draw.
     ').bold.white
-  puts Rainbow('************ Enjoy The Game ************ ').italic.yellow
-
+puts Rainbow('************ Enjoy The Game ************ ').italic.yellow
 
 puts Rainbow('The First player name : ').green
 player_one = Rainbow(gets.chomp).bold.blue
@@ -57,12 +56,12 @@ end
 def win_draw(player, flag, draw)
   if flag == true
     if draw == false
-      return Rainbow("Congratulation ! #{player} ").bold.gold + Rainbow('You Win').bold.gold
-      else
-      return Rainbow('DRAW !').bold.green
+      Rainbow("Congratulation ! #{player} ").bold.gold + Rainbow('You Win').bold.gold
+    else
+      Rainbow('DRAW !').bold.green
     end
   else
-    return Rainbow('Continue in the game !').cyan
+    Rainbow('Continue in the game !').cyan
   end
 end
 
